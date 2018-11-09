@@ -1,5 +1,4 @@
 import pandas as pd
-import numpy as np
 import matplotlib.pyplot as plt
 from fbprophet import Prophet
 
@@ -10,9 +9,9 @@ end = 2018
 
 for n in range(start, end + 1):
     file_name = '1320_' + str(n) + '.csv'
-    data2 = pd.read_csv(file_name, skiprows=2, encoding="cp932", header=None,
+    csv_data = pd.read_csv(file_name, skiprows=2, encoding="cp932", header=None,
                         names=['ds', 'Open', 'High', 'Low', 'Close', 'Volume', 'y'])
-    data = data.append(data2)
+    data = data.append(csv_data)
 
 model = Prophet()
 model.fit(data)

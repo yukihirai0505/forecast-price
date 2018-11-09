@@ -9,6 +9,7 @@ end = 2018
 
 for n in range(start, end + 1):
     file_name = '1320_' + str(n) + '.csv'
+    # use `ds` and `y` for fb prophet => https://facebook.github.io/prophet/docs/quick_start.html#python-api
     csv_data = pd.read_csv(file_name, skiprows=2, encoding="cp932", header=None,
                         names=['ds', 'Open', 'High', 'Low', 'Close', 'Volume', 'y'])
     data = data.append(csv_data)
